@@ -6,12 +6,14 @@ namespace Shopping
     {
         #region private attributes
         private List<Article> _articles = new List<Article>();
+
+
         #endregion private attributes
 
         #region public methods
         public void Add(List<Article> articles)
         {
-            throw new NotImplementedException();
+            _articles = articles;
         }
 
         public List<Article> Remove(Boolean clearCart = false)
@@ -36,7 +38,7 @@ namespace Shopping
         {
             get
             {
-                throw new NotImplementedException();
+                return _articles;
             }
         }
 
