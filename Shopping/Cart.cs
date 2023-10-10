@@ -1,40 +1,32 @@
-﻿using System.Net.Http.Headers;
+﻿using System;
+using System.Net.Http.Headers;
 
 namespace Shopping
 {
-    public class Cart : ICollectionOfArticles
+    public class Cart
     {
         #region private attributes
+<<<<<<< HEAD
         private List<Article> _articles = new List<Article>();
 
 
+=======
+        private List<CartItem> _cartItems = new List<CartItem>();
+>>>>>>> c465cf211419088b80ff30ba2e443a59a7fc41a4
         #endregion private attributes
 
         #region public methods
-        public void Add(List<Article> articles)
+        public void Add(List<CartItem> cartItems)
         {
             _articles = articles;
         }
 
-        public List<Article> Remove(Boolean clearCart = false)
-        {
-            List<Article> articlesReadyToCheckout = new List<Article>();
-            if (clearCart) 
-            {
-                throw new NotImplementedException();
-            }
-            else
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public void Release()
+        public void Remove(List<CartItem> cartItemsToRemove)
         {
             throw new NotImplementedException();
         }
 
-        public List<Article> Articles
+        public List<CartItem> CartItems
         {
             get
             {
@@ -42,7 +34,13 @@ namespace Shopping
             }
         }
 
-        public bool? IsReleased { get; set; }
+        public float Price
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
         #endregion public methods
     }
 }
