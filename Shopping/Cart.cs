@@ -6,19 +6,16 @@ namespace Shopping
     public class Cart
     {
         #region private attributes
-<<<<<<< HEAD
-        private List<Article> _articles = new List<Article>();
 
-
-=======
         private List<CartItem> _cartItems = new List<CartItem>();
->>>>>>> c465cf211419088b80ff30ba2e443a59a7fc41a4
+
         #endregion private attributes
 
         #region public methods
         public void Add(List<CartItem> cartItems)
         {
-            _articles = articles;
+            
+              _cartItems = cartItems;
         }
 
         public void Remove(List<CartItem> cartItemsToRemove)
@@ -30,7 +27,7 @@ namespace Shopping
         {
             get
             {
-                return _articles;
+                return _cartItems;
             }
         }
 
@@ -38,7 +35,12 @@ namespace Shopping
         {
             get
             {
-                throw new NotImplementedException();
+                float currentCartPrice = 0f;
+                foreach (var item in _cartItems)
+                {
+                    currentCartPrice += item.Article.Price * item.Quantity;
+                }
+                return currentCartPrice;
             }
         }
         #endregion public methods
